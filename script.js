@@ -1,7 +1,7 @@
 const prevBtn = document.querySelector(".prev")
 const nextBtn = document.querySelector(".next")
 const submitBtn = document.querySelector(".submit")
-const dataCont = document.querySelector(".data-cont")
+const datas = document.querySelectorAll(".data")
 const dots = document.querySelectorAll(".nav-ul li")
 const progressBar = document.querySelector(".progress-bar")
 
@@ -12,8 +12,11 @@ nextBtn.addEventListener("click", (e)=> {
     if (round < 3) {
         round++   
     }
-    dataCont.innerText = round
     updateBar()
+    
+    datas.forEach(data => {
+        data.style.transform = `translateX(-${round * 100}%)`
+    });
     
 })
 prevBtn.addEventListener("click", (e)=> {
@@ -21,8 +24,11 @@ prevBtn.addEventListener("click", (e)=> {
     if (round > 0) {
         round--   
     }
-    dataCont.innerText = round
     updateBar()
+    datas.forEach(data => {
+        data.style.transform = `translateX(-${round * 100}%)`
+    });
+    
 })
 
 function updateBar() {
@@ -47,5 +53,4 @@ function updateBar() {
     console.log()
 }
 
-// updateBar()
 

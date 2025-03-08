@@ -10,6 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     background-image: url(wallpaperflare.com_wallpaper.webp);
+    background-position: center center;
 }
 
 .container{
@@ -123,6 +124,7 @@ body{
     font-weight: bold;
     color: wheat;
     cursor: pointer;
+    flex-basis: 100px;
 }
 
 .prev{
@@ -142,4 +144,14 @@ body{
 
 .submit:not([hidden]) .next{
     display: none;
+}
+
+.data-cont{
+    display: flex;
+    overflow: hidden;
+}
+.data-cont div{
+    padding: 1rem;
+    flex: 1 0 100%;
+    transition: .5s;
 }
