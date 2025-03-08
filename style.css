@@ -1,0 +1,129 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #A9B5DF;
+    padding: 1rem;
+    width: 500px;
+}
+
+.container h1{
+    margin-bottom: 1rem;
+    color: #2D336B;
+    text-align: center;
+}
+
+.nav-ul{ 
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    counter-reset: count;
+}
+
+.nav-ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #7886C7;
+}
+
+.nav-ul li::before{
+    counter-increment: count;
+    content: counter(count);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7886C7; /* 7886C7 2D336B*/
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: #b3bce7;
+    position: relative;
+    z-index: 5;
+}   
+
+.progress-cont{
+    position: relative;
+    
+}
+
+.progress-cont::before{
+    content: "";
+    height: 4px;
+    width: 75%;
+    background-color: #7886C7; 
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.progress-bar{
+    height: 4px;
+    width: 75%;
+    background-color: #2D336B;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    translate: -50% -50%;
+    transform: scaleX(0%);
+    transform-origin: left;
+}
+
+.done::before{
+    background-color: #2D336B;
+}
+
+.nav-ul li:where(.done, .current){
+    color: black;
+    font-weight: bold;
+}
+
+.nav-ul li.done::before{
+    background-color: #2D336B;
+}
+
+.nav-ul li.current::before{
+    background-color: #2D336B;
+    box-shadow: 0 0 0 4px #7886C7;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 1rem;
+}
+
+.controls button{
+    background-color: #2D336B;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    font-size: .95rem;
+    font-weight: bold;
+    color: wheat;
+}
+
+.prev{
+    background-color: #7886C7 !important;
+    color: #ffffff !important;
+}
+.submit{
+    background-color: #2fff4b !important;
+    color: #ffffff !important;
+}
