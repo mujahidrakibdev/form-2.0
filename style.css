@@ -9,12 +9,14 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(wallpaperflare.com_wallpaper.webp);
 }
 
 .container{
     background-color: #A9B5DF;
     padding: 1rem;
     width: 500px;
+    border-radius: 25px;
 }
 
 .container h1{
@@ -38,6 +40,7 @@ body{
     align-items: center;
     flex: 1;
     color: #7886C7;
+    transition: .5s;
 }
 
 .nav-ul li::before{
@@ -54,6 +57,7 @@ body{
     color: #b3bce7;
     position: relative;
     z-index: 5;
+    transition: .5s;
 }   
 
 .progress-cont{
@@ -82,6 +86,7 @@ body{
     translate: -50% -50%;
     transform: scaleX(0%);
     transform-origin: left;
+    transition: .5s;
 }
 
 .done::before{
@@ -117,6 +122,7 @@ body{
     font-size: .95rem;
     font-weight: bold;
     color: wheat;
+    cursor: pointer;
 }
 
 .prev{
@@ -124,6 +130,16 @@ body{
     color: #ffffff !important;
 }
 .submit{
+    background-color: #ffffff !important;
+    color: #2fff4b !important;
+}
+
+.submit:hover{
     background-color: #2fff4b !important;
-    color: #ffffff !important;
+    color: wheat !important;
+    transition: .5s;
+}
+
+.submit:not([hidden]) .next{
+    display: none;
 }
